@@ -219,9 +219,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             _rightYAxisRenderer?.renderLimitLines(context: context)
         }
         
-        // make sure the data cannot be drawn outside the content-rect
         context.saveGState()
-        context.clip(to: _viewPortHandler.contentRect)
         renderer?.drawData(context: context)
         
         // if highlighting is enabled
